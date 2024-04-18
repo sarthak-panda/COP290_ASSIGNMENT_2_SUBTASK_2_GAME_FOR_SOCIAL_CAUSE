@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="begin.css">
+  <link rel="stylesheet" href="our_style.css">
+
+</head>
+
+<body>
+  <div class="hero">
+    <div class="clock">
+      <span id="hrs">00</span>
+      <span>:</span>
+      <span id="min">00</span>
+      <span>:</span>
+      <span id="sec">00</span>
+    </div>
+  </div>
+
+  <!-- Mission button with dropdown -->
+  <div class="search">
+    <button id="mission-button">
+      <img src="./assets/images/mission.png" alt="Mission Image" />
+      <span>0</span>
+      <ul class="dropdown">
+        <li><a href="#">MISSION_1</a></li>
+        <li><a href="#">MISSION_2</a></li>
+        <li><a href="#">MISSION_3</a></li>
+        <li><a href="#">MISSION_4</a></li>
+        <li><a href="#">MISSION_5</a></li>
+      </ul>
+    </button>
+  </div>
+  <canvas id="Canvas"></canvas>
+  <div id="points">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Rotating-golden-star.gif" alt="Star" /> 0
+  </div>
+
+  <button id="instructions-button" onclick="toggleInstructions()">Instructions</button>
+
+  <div id="instructions-popup" class="popup">
+    <div class="overlay" onclick="toggleInstructions()"></div>
+    <div class="content">
+      <div class="close-btn" onclick="toggleInstructions()">&times;</div>
+      <div id="instructions-content">
+        <h2>Game Controls</h2>
+        <p>Use <span class="key">W</span>, <span class="key">A</span>, <span class="key">S</span>, <span
+            class="key">D</span> or Arrow keys to move around.</p>
+        <p>Press <span class="key">P</span> to pray.</p>
+        <p>Press <span class="key">J</span> for jump pushups, <span class="key">K</span> for pushups, and <span
+            class="key">H</span> for normal pushups.</p>
+        <p>Press <span class="key">ESC</span> to exit a specific room or to make carried objects disappear.</p>
+        <p>Press <span class="key">B</span> to bow your head.</p>
+        <h2>Mission Instructions</h2>
+        <h3>Mission 1:</h3>
+        <p>Seek out the elder and pay your respects by bowing to him. Listen carefully to his instructions.</p>
+        <h3>Mission 2:</h3>
+        <p>Follow the elder's guidance and fulfill the doctor's recommendations.</p>
+        <h3>Mission 3:</h3>
+        <p>Head to school and complete your assignments.</p>
+        <h3>Mission 4:</h3>
+        <p>Visit the temple.</p>
+        <h3>Mission 5:</h3>
+        <p>Dedicate time for exercise.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="avatar-instructions">Choose Your Avatar. <div id="avatar">
+      <div>
+        <img id="boy" class="avatar-img" src="./assets/fbx/people/school_boy/pic.png" alt="photo" />
+      </div>
+      <div>
+        <img id="girl" class="avatar-img" src="./assets/fbx/people/school_girl/pic.png" alt="photo" />
+      </div>
+
+
+    </div>
+  </div>
+  <button id="playBtn">Play</button>
+  <button id="startBtn">Start</button>
+  <button id="endBtn"><a href="/EndPage/">End</a></button>
+
+  <div id="app"></div>
+
+  <button id="map-button" onclick="toggleMap()">Map</button>
+  <div id="map-popup" class="popup_1">
+    <div class="overlay_1" onclick="toggleMap()"></div>
+    <div class="content_1">
+      <div class="close-btn" onclick="toggleMap()">&times;</div>
+      <div id="map-content">
+        <img src="/assets/images/image_1.png" alt="Map 1" class="map-image">
+        <img src="/assets/images/image_2.png" alt="Map 2" class="map-image">
+        <img src="/assets/images/image_3.png" alt="Map 2" class="map-image">
+        <img src="/assets/images/image_4.png" alt="Map 2" class="map-image">
+        <img src="/assets/images/image_5.png" alt="Map 2" class="map-image">
+        <img src="/assets/images/image_6.png" alt="Map 2" class="map-image">
+      </div>
+      <button id="next-btn" onclick="nextMap()">Next</button>
+    </div>
+  </div>
+  <audio id="bgAudio" src="/assets/sound/start.mp3" autoplay loop></audio>
+  <audio id="fireworkAudio" src="/assets/sound/firework.mp3" autoplay loop></audio>
+
+  <script>
+    function toggleInstructions() {
+      var popup = document.getElementById("instructions-popup");
+      popup.classList.toggle("active");
+    }
+
+    document.getElementById("fireworkAudio").pause();
+    var currentImageIndex = 0;
+    var mapImages = document.getElementsByClassName("map-image");
+
+    function toggleMap() {
+      var popup = document.getElementById("map-popup");
+      popup.classList.toggle("active");
+      nextMap()
+    }
+
+    function nextMap() {
+      mapImages[currentImageIndex].style.display = "none";
+      currentImageIndex = (currentImageIndex + 1) % mapImages.length;
+      mapImages[currentImageIndex].style.display = "block";
+    }
+
+  </script>
+
+
+  <script type="module" src="/main.js"></script>
+  <script src="libs/inflate.min.js"></script>
+  <script src="libs/Detector.js"></script>
+  <script src="libs/toon3d.js"></script>
+  <script src="clock.js"></script>
+  <script type="module" src="game.js"></script>
+</body>
+
+</html>
+<!-- <!DOCTYPE html>
+                        <html lang="en">
+                        <head>
+                          <meta charset="UTF-8">
+                          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                          <link rel="stylesheet" href="hospital.css">
+                          <link rel="stylesheet" href="https://www.shanebrumback.com/css/app.css?v3">
+                          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                          <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-mutate-approach="sync"></script>
+                          <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+                          <title>Document</title>
+                        </head>
+                        <body>
+
+                            <script type="module" src="house.js"></script>
+                        </body>
+                        </html> -->
