@@ -277,7 +277,7 @@ function set_action(name) {
     }
 }
 var character = "boy";
-if(document.getElementById("girl")){
+if(document.getElementById("girly")){
     character = "girl";
 }
 let player = {};

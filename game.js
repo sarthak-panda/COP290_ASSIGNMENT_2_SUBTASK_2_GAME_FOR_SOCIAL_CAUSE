@@ -167,11 +167,12 @@ class Game {
 		this.scene.add(grid);
 		const loader = new FBXLoader();
 		const game = this;
+		console.log(this.character)
 		let path = `${this.assetsPath}fbx/people/`
-		if (this.character == "boy") {
+		if (this.character === "boy") {
 			path += "school_boy/boy.fbx"
 		}
-		else if (this.character == "girl") {
+		else if (this.character === "girl") {
 			path += "school_girl/girl.fbx"
 			this.addGirl();
 		}
@@ -274,7 +275,7 @@ class Game {
 	}
 	addGirl() {
 		var element = document.createElement('div');
-		element.id = 'girl';
+		element.id = 'girly';
 		element.style.width = '0px';
 		element.style.height = '0px';
 		document.body.appendChild(element);

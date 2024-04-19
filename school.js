@@ -247,7 +247,7 @@ function set_action(name) {
     action.play();
 }
 var character = "boy";
-if(document.getElementById("girl")){
+if(document.getElementById("girly")){
     character = "girl";
 }
 let path = `./assets/fbx/people/`

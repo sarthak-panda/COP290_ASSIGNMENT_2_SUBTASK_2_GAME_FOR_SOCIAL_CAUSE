@@ -334,14 +334,16 @@ function set_action(name) {
     action.play();
 }
 var character = "boy";
-if(document.getElementById("girl")){
+console.log(document.getElementById("girl"))
+if(document.getElementById('girly')){
     character = "girl";
 }
+console.log(character)
 let path = `./assets/fbx/people/`
-if (character == "boy") {
+if (character === "boy") {
     path += "school_boy/boy.fbx"
 }
-else if (character == "girl") {
+else if (character === "girl") {
     path += "school_girl/girl.fbx"
 }
 fbxloader.load(path, function (object) {
