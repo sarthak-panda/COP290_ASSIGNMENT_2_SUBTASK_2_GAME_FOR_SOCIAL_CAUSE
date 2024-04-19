@@ -532,7 +532,7 @@ class Game {
 			gltf => {
 				this.book = gltf.scene;
 				gltf.scene.position.set(-7341.79233, 85, -1029.69910)
-				if(document.getElementById('girl')){
+				if(document.getElementById('girly')){
 					gltf.scene.position.y=65;
 				}
 				gltf.scene.rotation.set(Math.PI / 2, 0, 0)
