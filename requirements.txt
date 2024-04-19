@@ -1,0 +1,5 @@
+(To install vite on your linux device)
+sudo apt-get update
+sudo apt-get -y install vite
+(Then to run the website open in terminal)
+npm run dev
