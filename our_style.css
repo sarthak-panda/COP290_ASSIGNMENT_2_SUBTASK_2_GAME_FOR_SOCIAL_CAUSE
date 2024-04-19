@@ -1,0 +1,139 @@
+#Canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  display: none;
+}
+.hero{
+
+    position: absolute;
+    /* right: 500px; */
+    left: calc(50% - 154px);
+    width: 250px;
+    float: right;
+    border: 2px solid grey;
+    top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'RocknRoll One', sans-serif;
+    /* cursor: pointer; */
+    padding: 10px 20px;
+    background: linear-gradient(to right, #553c9a, #ee4b2b, #00c2cb, #ff7f50, #553c9a);
+    color: white;
+    background-size: 200%;
+    background-position: -200%;
+    animation: animated-gradient 2s infinite alternate-reverse;
+   
+}
+@keyframes animated-gradient{
+    to{
+      background-position: 200%;
+    }
+  }
+.clock span{
+    left: 50%;
+    font-size: 30px;
+    font-family: "Audiowide";
+    display: inline-block;
+    text-align: center;
+}
+.clock span::after{
+    font-size: 10px;
+    position: absolute;
+    bottom: -6px;
+    transform: translate(-140%,-50%);
+}
+#hrs::after{
+    content: 'HRS';
+}
+#min::after{
+    content: 'MIN';
+}
+#sec::after{
+    content: 'SEC';
+}#mission-button .dropdown {
+  display: none;
+  position: absolute;
+  top: 65%;
+  right: 2%;
+  z-index: 999;
+  list-style: none;
+  padding: 10px;
+}
+ 
+#mission-button .dropdown li {
+  padding: 10px 20px;
+  background-color: #454545;
+  font-size: large;
+  border: 1px solid orangered;
+  text-align: center;
+}
+ 
+#mission-button:hover .dropdown {
+  display: inline-block;
+}
+ 
+#mission-button:hover .dropdown li a {
+  color: white;
+  text-decoration: none;
+  line-height: 25px;
+  display: block;
+}
+ 
+#mission-button:hover .dropdown :hover {
+  background: linear-gradient(45deg, red, #30197d);
+}
+ 
+ 
+#mission-button {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  float: right;
+  border: 2px solid grey;
+  padding: 5;
+  display: flex;
+  align-items: center;
+  font-family: "Audiowide", sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px 20px;
+  background: linear-gradient(150deg, #FF8C00, yellow);
+  color: black;
+  font-size: 25px;
+  transition-duration: 0.4s;
+}
+ 
+#mission-button:hover {
+  background: linear-gradient(150deg, red, yellow);
+  color: white;
+}
+#mission-button img {
+  position: relative;
+  margin-right: 10px;
+  width: 50px;
+  height: auto;
+}
+#points{
+  position: absolute;
+  top:5px;
+  left: 20px;
+  border: 1px solid grey;
+  display: flex;
+  align-items: center;
+  font-family: "Audiowide", sans-serif;
+  color: antiquewhite;
+ 
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px 20px;
+  background: linear-gradient(45deg, yellow, red);
+}
+ 
+#points img{
+  width: 50px;
+}
