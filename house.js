@@ -254,8 +254,6 @@ function addEscape() {
     element.style.width = '0px';
     element.style.height = '0px';
     document.body.appendChild(element);
-    document.removeEventListener('mousedown', onMouseDown, false);
-    document.removeEventListener('touchstart', onMouseDown, false);
 }
 function addMissionFail(){
     var element = document.createElement('div');
