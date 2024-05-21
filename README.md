@@ -1,4 +1,4 @@
-This is a 3D game developed for Websites.</br>
+This is a 3D game developed using ThreeJS Javascript Library for Websites.</br>
 Assets and Node Modules folders can be downloaded from link (only in case they are not getting cloned completely):</br>
 https://1drv.ms/f/s!AlD4y9La27HPg9cB-ekmpnpxTudyag?e=mhyR95</br>
 Assuming a Vite Environment is already set up you run the game using command: `npm run dev`</br>
